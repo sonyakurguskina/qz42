@@ -1,7 +1,9 @@
 package itis.parsing2;
 
+import java.io.IOException;
+
 interface FactoryParsingService {
 
-    Factory parseFactoryData(String factoryDataDirectoryPath) throws FactoryParsingException;
+    void parseFactoryData(String factoryDataDirectoryPath) throws FactoryParsingException, ClassNotFoundException, IOException;
 
 }

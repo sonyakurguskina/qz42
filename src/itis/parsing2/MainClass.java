@@ -29,7 +29,14 @@ public class MainClass {
     private FactoryParsingServiceImpl factoryService = new FactoryParsingServiceImpl();
 
     public static void main(String[] args) throws Exception {
-        new MainClass().run("");
+        System.out.println("Первый файл");
+        new MainClass().run("C:\\kr_22\\src\\itis\\parsing2\\resources\\1\\factory-data-1-1");
+        System.out.println("Второй файл");
+        new MainClass().run("C:\\kr_22\\src\\itis\\parsing2\\resources\\1\\factory-data-1-2");
+        System.out.println("Третий файл");
+        new MainClass().run("C:\\kr_22\\src\\itis\\parsing2\\resources\\2\\factory-data-1-2");
+        System.out.println("Четвертый файл");
+        new MainClass().run("C:\\kr_22\\src\\itis\\parsing2\\resources\\2\\factory-data-2-2");
     }
 
     private void run(String factoryDirectoryPath) throws Exception {
@@ -37,7 +44,7 @@ public class MainClass {
         Factory factory = null;
 
         try {
-            factory = factoryService.parseFactoryData(factoryDirectoryPath);
+            factoryService.parseFactoryData(factoryDirectoryPath);
         } catch (FactoryParsingException parsingException) {
             System.out.println(parsingException);
         } catch (RuntimeException e) {
